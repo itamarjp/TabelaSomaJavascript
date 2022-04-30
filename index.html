@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+<!--
+este codigo consiste em dar nome para as caixas de texto *input type=text* utilizando o id
+o botao chama a função somar que atribui o valor das caixas de texto para variaveis e utiliza o 
+parseInt para converter de texto para número para que seja possivel somar ao invés de juntar.
+depois de somar pega o resultado e coloca ele de volta na caixa de texto resultado utilizando o
+document.getElementById para referenciar a caixa de texto resultado pelo id(nome dela)
+vc não consegue editar o texto da caixa resultado pois ela esta como readonly(somente leitura)
+
+-->
+
+    <style>
+        th,
+        td {
+            border: 1px solid black;
+            /* border-collapse: collapse; */
+            /* border-radius: 10px; */
+        }
+    </style>
+    <script>
+        function somar() {
+            numero1 = document.getElementById("numero1").value;
+            numero2 = document.getElementById("numero2").value;
+            resultado = parseInt(numero1) + parseInt(numero2);
+            document.getElementById("resultado").value = resultado;
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Mega Ultra Master Website da Soma</h1>
+    <table>
+        <tr>
+            <td>Numero 1</td>
+            <td>
+                <input type="text" id="numero1">
+            </td>
+        </tr>
+        <tr>
+            <td>Numero 2</td>
+            <td>
+                <input type="text" id="numero2">
+            </td>
+        </tr>
+        <tr>
+            <td>Resultado</td>
+            <td>
+                <input type="text" id="resultado" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>Botao</td>
+            <td>
+                <input type="button" onclick="somar();" value="Somar">
+            </td>
+        </tr>
+
+
+
+    </table>
+</body>
+
+</html>
